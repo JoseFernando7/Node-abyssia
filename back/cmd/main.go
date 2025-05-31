@@ -31,6 +31,8 @@ func main() {
 
 	r.HandleFunc("/containers/delete/{id}", handlers.DeleteContainerHandler).Methods("DELETE")
 
+	r.HandleFunc("/containers/inspect/{id}", handlers.InspectContainerHandler).Methods("GET")
+
 	log.Println("✨ Node†abyssia corriendo en http://localhost:8080")
 	http.ListenAndServe(":8080", r)
 }
